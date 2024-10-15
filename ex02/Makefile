@@ -1,4 +1,4 @@
-NAME = ScavTrap
+NAME = FragTrap
 CXX = c++
 CXXFLAGS = -Wall -Wextra -Werror -std=c++98
 CYAN_BOLD=\033[1m\033[36m

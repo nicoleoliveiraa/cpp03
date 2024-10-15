@@ -6,12 +6,13 @@
 /*   By: nsouza-o <nsouza-o@student.42porto.com     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/14 12:05:25 by nsouza-o          #+#    #+#             */
-/*   Updated: 2024/10/15 16:06:07 by nsouza-o         ###   ########.fr       */
+/*   Updated: 2024/10/15 16:49:25 by nsouza-o         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ClapTrap.hpp"
 #include "ScavTrap.hpp"
+#include "FragTrap.hpp"
 
 #define RESET       "\033[0m"
 #define BLACK       "\033[30m"
@@ -34,7 +35,7 @@
 
 int main()
 {
-		std::cout << "\033[31m### TESTING CLAPTRAP ###\n\033[0m" << std::endl;
+		std::cout << "\n\n\033[31m### TESTING CLAPTRAP ###\n\033[0m" << std::endl;
 	{
 		std::cout << "\033[1m\033[33mConstructing\033[0m" << std::endl;
 		ClapTrap a;
@@ -69,6 +70,21 @@ int main()
 		d.takeDamage(15);
 		d.attack("ScavTrap-clone");
 		std::cout << "\033[1m\033[32mDeconstructing\033[0m" << std::endl;
+	}
+	std::cout << "\n\n\033[31m### TESTING FRAGTRAP ###\n\033[0m" << std::endl;
+	{
+		std::cout << "\033[1m\033[34mConstructing\033[0m" << std::endl;
+		FragTrap e;
+		FragTrap f("Chadd");
+
+		std::cout << "\033[1m\033[34mTesting\033[0m" << std::endl;
+		e.highFivesGuys();
+		e.attack("some random dude");
+		e.takeDamage(101);
+		e.takeDamage(1);
+		e.attack("some random dude");
+		f.highFivesGuys();
+		std::cout << "\033[1m\033[34mDeconstructing\033[0m" << std::endl;
 	}
 	return (0);
 }
