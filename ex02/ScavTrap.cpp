@@ -6,7 +6,7 @@
 /*   By: nsouza-o <nsouza-o@student.42porto.com     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/15 15:00:17 by nsouza-o          #+#    #+#             */
-/*   Updated: 2024/10/15 17:04:06 by nsouza-o         ###   ########.fr       */
+/*   Updated: 2024/10/17 15:18:02 by nsouza-o         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,6 +52,23 @@ ScavTrap& ScavTrap::operator=(const ScavTrap& src)
 ScavTrap::~ScavTrap()
 {
 	std::cout << "ScavTrap destructor called and it " << _name << " was destroyed!" << std::endl;	
+}
+
+bool ScavTrap::hasEnergy(const std::string& target, const std::string& action)
+{
+	if (this->_energyPoints <= 0)
+	{
+		std::cout << "ScavTrap " << _name << " tried to " << action << " " << target
+		<< " but doesn't have enough energy points to perform the action!" << std::endl;
+		return (false);
+	}
+	else if (this->_hitPoints <= 0)
+	{
+		std::cout << "ScavTrap " << _name << " tried to " << action << " "  << target
+		<< " but doesn't have enough hit points to perform the action!" << std::endl;
+		return (false);
+	}
+	return (true);
 }
 
 void ScavTrap::attack(const std::string& target)

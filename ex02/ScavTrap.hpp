@@ -6,7 +6,7 @@
 /*   By: nsouza-o <nsouza-o@student.42porto.com     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/15 14:56:10 by nsouza-o          #+#    #+#             */
-/*   Updated: 2024/10/15 15:15:01 by nsouza-o         ###   ########.fr       */
+/*   Updated: 2024/10/17 15:17:13 by nsouza-o         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,8 @@ public:
 	ScavTrap(const ScavTrap& src);
 	ScavTrap& operator=(const ScavTrap& src);
 	~ScavTrap();
+
+	bool hasEnergy(const std::string& target, const std::string& action);
 	
 	void attack(const std::string& target);
 	void guardGate();

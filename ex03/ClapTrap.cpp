@@ -6,7 +6,7 @@
 /*   By: nsouza-o <nsouza-o@student.42porto.com     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/14 10:24:38 by nsouza-o          #+#    #+#             */
-/*   Updated: 2024/10/16 19:39:57 by nsouza-o         ###   ########.fr       */
+/*   Updated: 2024/10/17 14:58:16 by nsouza-o         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,13 +70,13 @@ bool ClapTrap::hasEnergy(const std::string& target, const std::string& action)
 {
 	if (this->_energyPoints <= 0)
 	{
-		std::cout << "ClapTrap " << _name << " tried to " << action << " " << target
+		std::cout << _name << " tried to " << action << " " << target
 		<< " but doesn't have enough energy points to perform the action! 🫥" << std::endl;
 		return (false);
 	}
 	else if (this->_hitPoints <= 0)
 	{
-		std::cout << "ClapTrap " << _name << " tried to " << action << " "  << target
+		std::cout << _name << " tried to " << action << " "  << target
 		<< " but doesn't have enough hit points to perform the action! 🫥" << std::endl;
 		return (false);
 	}

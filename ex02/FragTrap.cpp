@@ -6,7 +6,7 @@
 /*   By: nsouza-o <nsouza-o@student.42porto.com     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/15 16:26:17 by nsouza-o          #+#    #+#             */
-/*   Updated: 2024/10/15 17:04:00 by nsouza-o         ###   ########.fr       */
+/*   Updated: 2024/10/17 15:18:53 by nsouza-o         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,6 +52,23 @@ FragTrap& FragTrap::operator=(const FragTrap& src)
 FragTrap::~FragTrap()
 {
 	std::cout << "FragTrap destructor called and it " << _name << " was destroyed!" << std::endl;	
+}
+
+bool FragTrap::hasEnergy(const std::string& target, const std::string& action)
+{
+	if (this->_energyPoints <= 0)
+	{
+		std::cout << "FragTrap " << _name << " tried to " << action << " " << target
+		<< " but doesn't have enough energy points to perform the action!" << std::endl;
+		return (false);
+	}
+	else if (this->_hitPoints <= 0)
+	{
+		std::cout << "FragTrap " << _name << " tried to " << action << " "  << target
+		<< " but doesn't have enough hit points to perform the action!" << std::endl;
+		return (false);
+	}
+	return (true);
 }
 
 void FragTrap::attack(const std::string& target)
